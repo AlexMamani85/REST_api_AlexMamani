@@ -65,6 +65,18 @@ let updateBlog = (req, res) =>{
 
 app.put('/blog/:blogId', updateBlog);
 
+
+let deleteBlog = (req, res) => {
+    blogModel.remove({_id: req.params.blogId}, (err, blog) =>{
+        if(err){
+            res.send(err);
+        }
+        res.json({message: 'Blog Deleted Successfully'})
+    })
+}
+
+app.delete('/blog/:blogId', deleteBlog);
+
 app.listen(PORT, () => {
     console.log(`Server is running on PORT: ${PORT}`)   
 })
