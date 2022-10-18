@@ -37,7 +37,7 @@ let getAllBlogs = (req, res) =>{
     })
 }
 
-app.get('/getBlogs', getAllBlogs)
+app.get('/blogs', getAllBlogs)
 
 let getBlogByID = (req, res) =>{
 
@@ -53,6 +53,17 @@ let getBlogByID = (req, res) =>{
 
 app.get('/blog/:blogID', getBlogByID);
 
+
+let updateBlog = (req, res) =>{
+    blogModel.findOneAndUpdate({_id: req.params.blogId}, req.body, {new: true}, (err, updatedBlog)=>{
+        if(err){
+            res.send(err);
+        }
+        res.json(updatedBlog);
+    })
+}
+
+app.put('/blog/:blogId', updateBlog);
 
 app.listen(PORT, () => {
     console.log(`Server is running on PORT: ${PORT}`)   
