@@ -36,7 +36,22 @@ let getAllBlogs = (req, res) =>{
         } 
     })
 }
+
 app.get('/getBlogs', getAllBlogs)
+
+let getBlogByID = (req, res) =>{
+
+    blogModel.findById((req.params.blogID), (err, blog)=>{
+        if(err){
+            console.log("error")
+            res.send(err);
+        }
+        console.log(blog)
+        res.json(blog);
+    })
+}
+
+app.get('/blog/:blogID', getBlogByID);
 
 
 app.listen(PORT, () => {
