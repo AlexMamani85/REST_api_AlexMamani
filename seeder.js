@@ -68,11 +68,30 @@ const selectALLData = async () => {
 };
 
 
+const selectById = async (id) => {
+    MongoClient.connect('mongodb://localhost/test', function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("mydb");
+      
+        dbo.collection("blogs").find({_id: id}).toArray(function(err, result) {
+          if (err) throw err;
+          console.log(result);
+          console.log(`  Number of document(s):  ${result.length}  `.yellow.inverse);
+          db.close();
+        });
+})
+};
+
 
   if (process.argv[2] === '-i') {
     importData();
   } else if (process.argv[2] === '-d') {
     deleteALLData();
   } else if (process.argv[2] === '-s') {
-    selectALLData();
+    if (process.argv[3]) {
+        selectById(process.argv[3]);}
+    else {
+        selectALLData();}
+    
+
   }
