@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 const routes = require('./src/routes/crmRoutes');
 const mongoose = require('mongoose');
 
-
+// To pass CORS policy
 app.use((req, res, next) => {
     res.append('Access-Control-Allow-Origin', '*');
     res.append('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS');

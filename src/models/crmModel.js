@@ -5,6 +5,9 @@ var blogSchema = new schema({
     title: String,
     author: String,
     body: String,
+},
+{
+  timestamps: true
 });
 
 module.exports = blogSchema;
