@@ -152,3 +152,15 @@ node seeder.js -d
 - [x] Start mongo service
 - [x] Start NodeJS server
 - [x] Fill Blog Collection (table)
+
+<br>
+
+---
+
+## Documentation for endpoints in index.html
+
+
+[<div style="text-align: right">Documentation click here</div>](./index.html)
+  
+<div style="text-align: right; color:orange">then Open with Live Server</div>
+  
