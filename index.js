@@ -3,7 +3,6 @@ var express = require('express');
 var bodyParser = require('body-parser')
 const app = express();
 const PORT = process.env.PORT || 3000;
-const routes = require('./src/routes/crmRoutes');
 const mongoose = require('mongoose');
 
 // To pass CORS policy
