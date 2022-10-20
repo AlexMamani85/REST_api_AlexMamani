@@ -1,9 +1,18 @@
 var express = require('express');
+
 var bodyParser = require('body-parser')
 const app = express();
 const PORT = process.env.PORT || 3000;
 const routes = require('./src/routes/crmRoutes');
 const mongoose = require('mongoose');
+
+
+app.use((req, res, next) => {
+    res.append('Access-Control-Allow-Origin', '*');
+    res.append('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS');
+    res.append('Access-Control-Allow-Headers', 'Content-Type, authorization');
+    next();
+});
 
 mongoose.connect('mongodb://localhost/test', {
     useNewUrlParser:true
@@ -53,6 +62,19 @@ let getBlogByID = (req, res) =>{
 
 app.get('/blog/:blogID', getBlogByID);
 
+
+let getBlogByTitle = (req, res) =>{
+    words=req.params.words;
+    blogModel.find({title: { $regex: words }},(err,blogs)=>{
+        if(err){
+            res.send(err);
+        } else{
+            res.json(blogs);
+        } 
+    })
+}
+
+app.get('/busqueda/:words', getBlogByTitle);
 
 let updateBlog = (req, res) =>{
     blogModel.findOneAndUpdate({_id: req.params.blogId}, req.body, {new: true}, (err, updatedBlog)=>{
