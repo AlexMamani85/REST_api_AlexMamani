@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "80b0ada7-34ef-4bcc-bfd0-7e8bc0ab951f",
+		"name": "Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23742018"
+	},
+	"item": [
+		{
+			"name": "get ALL Blogs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "First Post",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "Tupac",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "This is the first blog",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get ONE Blog",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "First Post",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "Tupac",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "This is the first blog",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/blogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deL ONE Blog",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "First Post",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "Tupac",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "This is the first blog",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/blog/634eecf7fcf549502b2a6794",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blog",
+						"634eecf7fcf549502b2a6794"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create ONE Blog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "First Post",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "Tupac",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "This is the first blog",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/newBlog?title=New Designaholic&author=New Diego&body=New Designaholic es un blog que trata temas actuales y relevantes en el diseño y las disciplinas relacionadas, invitando a los “adictos” al diseño a reflexionar sobre temas recurrentes del día a día y el papel que esta materia juega en ellas.  Además de Diseño Industrial, Designaholic también toca una variedad de disciplinas creativas tales como el diseño gráfico, de experiencias, interactivo, sustentable, arte y arquitectura con un enfoque honesto y hablando directamente con el público.",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"newBlog"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "New Designaholic"
+						},
+						{
+							"key": "author",
+							"value": "New Diego"
+						},
+						{
+							"key": "body",
+							"value": "New Designaholic es un blog que trata temas actuales y relevantes en el diseño y las disciplinas relacionadas, invitando a los “adictos” al diseño a reflexionar sobre temas recurrentes del día a día y el papel que esta materia juega en ellas.  Además de Diseño Industrial, Designaholic también toca una variedad de disciplinas creativas tales como el diseño gráfico, de experiencias, interactivo, sustentable, arte y arquitectura con un enfoque honesto y hablando directamente con el público."
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update ONE Blog",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "First Post",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "Tupac",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "This is the first blog",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/newBlog?title=New Designaholic&author=New Diego&body=New Designaholic es un blog que trata temas actuales y relevantes en el diseño y las disciplinas relacionadas, invitando a los “adictos” al diseño a reflexionar sobre temas recurrentes del día a día y el papel que esta materia juega en ellas.  Además de Diseño Industrial, Designaholic también toca una variedad de disciplinas creativas tales como el diseño gráfico, de experiencias, interactivo, sustentable, arte y arquitectura con un enfoque honesto y hablando directamente con el público.",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"newBlog"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "New Designaholic"
+						},
+						{
+							"key": "author",
+							"value": "New Diego"
+						},
+						{
+							"key": "body",
+							"value": "New Designaholic es un blog que trata temas actuales y relevantes en el diseño y las disciplinas relacionadas, invitando a los “adictos” al diseño a reflexionar sobre temas recurrentes del día a día y el papel que esta materia juega en ellas.  Además de Diseño Industrial, Designaholic también toca una variedad de disciplinas creativas tales como el diseño gráfico, de experiencias, interactivo, sustentable, arte y arquitectura con un enfoque honesto y hablando directamente con el público."
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
