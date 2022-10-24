@@ -13,7 +13,7 @@ app.use((req, res, next) => {
     next();
 });
 
-mongoose.connect('mongodb://localhost/test', {
+mongoose.connect('mongodb://localhost/', {
     useNewUrlParser:true
 });
 

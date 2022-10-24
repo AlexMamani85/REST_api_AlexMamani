@@ -21,7 +21,7 @@ const blogs = JSON.parse(
 
     MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    var dbo = db.db("mydb");
+    var dbo = db.db("test");
     dbo.collection("blogs").insertMany(blogs, function(err, res) {
         if (err) throw err;
         console.log(
@@ -40,7 +40,7 @@ const blogs = JSON.parse(
 
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
-        var dbo = db.db("mydb");
+        var dbo = db.db("test");
         
         dbo.collection("blogs").deleteMany(({ }) , function(err, obj) {
           if (err) throw err;
@@ -56,7 +56,7 @@ const selectALLData = async () => {
 
     MongoClient.connect('mongodb://localhost/test', function(err, db) {
         if (err) throw err;
-        var dbo = db.db("mydb");
+        var dbo = db.db("test");
       
         dbo.collection("blogs").find().toArray(function(err, result) {
           if (err) throw err;
@@ -71,7 +71,7 @@ const selectALLData = async () => {
 const selectById = async (id) => {
     MongoClient.connect('mongodb://localhost/test', function(err, db) {
         if (err) throw err;
-        var dbo = db.db("mydb");
+        var dbo = db.db("test");
       
         dbo.collection("blogs").find({_id: id}).toArray(function(err, result) {
           if (err) throw err;
