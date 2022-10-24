@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 const BlogSchema = require('./src/models/crmModel');
 const blogModel = mongoose.model('blog', BlogSchema);
 
-app.post('/newBlog', (req, res) =>{
+app.post('/blogs', (req, res) =>{
     let blog = new blogModel(req.body);
     blog.save((err, blogModel)=>{
         if(err) {
@@ -59,7 +59,7 @@ let getBlogByID = (req, res) =>{
     })
 }
 
-app.get('/blog/:blogID', getBlogByID);
+app.get('/blogs/:blogID', getBlogByID);
 
 
 let getBlogByTitle = (req, res) =>{
@@ -84,7 +84,7 @@ let updateBlog = (req, res) =>{
     })
 }
 
-app.put('/blog/:blogId', updateBlog);
+app.put('/blogs/:blogId', updateBlog);
 
 
 let deleteBlog = (req, res) => {
@@ -96,7 +96,7 @@ let deleteBlog = (req, res) => {
     })
 }
 
-app.delete('/blog/:blogId', deleteBlog);
+app.delete('/blogs/:blogId', deleteBlog);
 
 app.listen(PORT, () => {
     console.log(`Server is running on PORT: ${PORT}`)   
